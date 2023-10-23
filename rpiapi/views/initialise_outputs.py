@@ -28,6 +28,7 @@ def initialise_outputs(environ, response, parameter = None):
 		# turn all pins off
 		GPIO.output(pins, 0)
 
+		GPIO.cleanup()
 		result = True
 	
 	except Exception as e:

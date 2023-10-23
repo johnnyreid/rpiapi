@@ -15,11 +15,15 @@ def activate_output(environ, response, parameter = None):
 	try:
 	
 		pin = int(parameter[0])
-		
+
+		# GPIO.setup(pin, GPIO.OUT)
+
 		GPIO.output(pin, 1)
 		
 		result = GPIO.input(pin)
-	
+
+		GPIO.cleanup()
+
 	except Exception as e:
 
 		status = "400 Bad Request"

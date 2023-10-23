@@ -17,7 +17,9 @@ def read_output(environ, response, parameter = None):
 		pin = int(parameter[0])
 		
 		result = GPIO.input(pin)
-	
+
+		GPIO.cleanup()
+
 	except Exception as e:
 
 		status = "400 Bad Request"
