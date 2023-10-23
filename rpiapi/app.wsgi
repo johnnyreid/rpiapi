@@ -4,7 +4,7 @@ from RPi import GPIO
 
 
 GPIO.setwarnings(False)
-#GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BOARD)
 
 routes = [
 	(r'\/?$', index),
