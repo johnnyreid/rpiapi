@@ -14,7 +14,6 @@ routes = [
 	(r'\/deactivate_output\/?([0-9]*)$', deactivate_output),
 	(r'\/mode\/?([0-9]*)$', mode),
 	(r'\/read\/?([0-9]*)\/?(up|down)?$', read),
-	(r'\/serial\/?([0-9]*)$', serial_view),
 	(r'\/toggle\/?([0-9]*)$', toggle),
 	(r'\/network\/?$', network)
 ]
