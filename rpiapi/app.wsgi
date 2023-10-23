@@ -4,12 +4,14 @@ from RPi import GPIO
 
 
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD)
+#GPIO.setmode(GPIO.BOARD)
 
 routes = [
 	(r'\/?$', index),
-	(r'\/activate\/?([0-9]*)$', activate),
-	(r'\/deactivate\/?([0-9]*)$', deactivate),
+    (r'\/initialise_outputs\/?([0-9]*)$', initialise_outputs),
+    (r'\/read_output\/?([0-9]*)$', read_output),
+	(r'\/activate_output\/?([0-9]*)$', activate_output),
+	(r'\/deactivate_output\/?([0-9]*)$', deactivate_output),
 	(r'\/mode\/?([0-9]*)$', mode),
 	(r'\/read\/?([0-9]*)\/?(up|down)?$', read),
 	(r'\/serial\/?([0-9]*)$', serial_view),
