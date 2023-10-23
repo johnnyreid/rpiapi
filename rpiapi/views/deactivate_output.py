@@ -2,7 +2,7 @@ import json
 from RPi import GPIO
 
 
-def deactivate(environ, response, parameter = None):
+def deactivate_output(environ, response, parameter = None):
 	
 	status = "200 OK"
 	

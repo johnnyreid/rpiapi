@@ -2,7 +2,7 @@ import json
 from RPi import GPIO
 
 
-def activate(environ, response, parameter = None):
+def activate_output(environ, response, parameter = None):
 	
 	status = "200 OK"
 	

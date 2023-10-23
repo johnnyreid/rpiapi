@@ -1,8 +1,11 @@
 import json
+from array import *
 from RPi import GPIO
 
+"""This will initialise an array of pins by setting them as outputs, and turning them off"""
 
-def activate(environ, response, parameter = None):
+
+def initialise_outputs(environ, response, parameter = None):
 	
 	status = "200 OK"
 	
@@ -14,11 +17,15 @@ def activate(environ, response, parameter = None):
 	
 	try:
 	
-		pin = int(parameter[0])
-		
-		GPIO.output(pin, 1)
-		
-		result = GPIO.input(pin)
+		pins = array(parameter[0])
+
+		# set up all pins to be outputs
+		GPIO.setup(pins, GPIO.OUT)
+
+		# turn all pins off
+		GPIO.output(pins, 0)
+
+		result = True
 	
 	except Exception as e:
 
