@@ -36,4 +36,7 @@ for pin in pins:
     #logging.info("Pin " + str(pin) + " should should be on: " + str(GPIO.input(pin)))
     #logging.info("Initialisation completed for pin " + str(pin) + "!\n")
 
+#release the pins
+GPIO.cleanup()
+
 logging.info("GPIO Initialisation completed.--------------------------------------------------")
