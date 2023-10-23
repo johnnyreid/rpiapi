@@ -30,5 +30,8 @@ htpasswd /var/www/rpiapi/.htpasswd admin
 
 ip=$(hostname -I | cut -d " " -f1) 
 
+echo "Initialising the output pins...."
+python initialiseGpos.py
+
 echo "All set."
 echo "You can check the API at http://$ip/rpiapi"
