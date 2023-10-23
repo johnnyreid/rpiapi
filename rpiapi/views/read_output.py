@@ -13,9 +13,10 @@ def read_output(environ, response, parameter = None):
 	]
 	
 	try:
-	
 		pin = int(parameter[0])
-		
+
+		GPIO.setup(pin, GPIO.OUT)
+
 		result = GPIO.input(pin)
 
 		GPIO.cleanup()
