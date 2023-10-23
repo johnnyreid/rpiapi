@@ -16,8 +16,6 @@ def activate(environ, response, parameter = None):
 	
 		pin = int(parameter[0])
 		
-		GPIO.setup(pin, GPIO.OUT)
-	
 		GPIO.output(pin, 1)
 		
 		result = GPIO.input(pin)

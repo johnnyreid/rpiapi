@@ -2,7 +2,7 @@ import json
 from RPi import GPIO
 
 
-def deactivate(environ, response, parameter = None):
+def activate(environ, response, parameter = None):
 	
 	status = "200 OK"
 	
@@ -16,9 +16,7 @@ def deactivate(environ, response, parameter = None):
 	
 		pin = int(parameter[0])
 		
-		GPIO.setup(pin, GPIO.OUT)
-	
-		GPIO.output(pin, 0)
+		GPIO.output(pin, 1)
 		
 		result = GPIO.input(pin)
 	
