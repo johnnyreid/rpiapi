@@ -63,7 +63,7 @@ By default you have:
 
 ```python
 ports = [
-	('/dev/ttyUSB0', 9600)
+    ('/dev/ttyUSB0', 9600)
 ]
 ```
 

@@ -19,7 +19,7 @@ def initialise_outputs(environ, response, parameter = None):
     
         # pins = array(parameter[0])
 
-pins = [11, 13, 15, 16, 12, 18, 22, 7, 29, 31]
+        pins = [11, 13, 15, 16, 12, 18, 22, 7, 29, 31]
 
         # set up all pins to be outputs
         GPIO.setup(pins, GPIO.OUT)
