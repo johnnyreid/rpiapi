@@ -5,6 +5,10 @@
 # Install dependencies
 apt-get -y install python3 python3-pigpio apache2 apache2-utils libapache2-mod-wsgi-py3
 
+#Install Python Packages From a Requirements File
+pip install -r requirements.txt
+
+
 # Enable module wsgi
 a2enmod wsgi
 
