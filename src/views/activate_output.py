@@ -16,6 +16,8 @@ def activate_output(environ, response, parameter = None):
     
         pin = int(parameter[0])
 
+        GPIO.setmode(GPIO.BOARD)
+
         GPIO.setup(pin, GPIO.OUT)
 
         GPIO.output(pin, 1)

@@ -23,7 +23,8 @@ def mode(environ, response, parameter = None):
     ]
     
     try:
-    
+        GPIO.setmode(GPIO.BOARD)
+
         result = pin_modes[ GPIO.gpio_function(int(parameter[0])) ]
     
     except Exception as e:

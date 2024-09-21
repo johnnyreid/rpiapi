@@ -13,8 +13,10 @@ def deactivate_output(environ, response, parameter = None):
     ]
     
     try:
-    
+
         pin = int(parameter[0])
+
+        GPIO.setmode(GPIO.BOARD)
 
         GPIO.setup(pin, GPIO.OUT)
 

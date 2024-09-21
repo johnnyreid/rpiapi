@@ -17,7 +17,9 @@ def index(environ, response):
     status = "200 OK"
     
     header = [("Content-Type", "application/json")]
-    
+
+    GPIO.setmode(GPIO.BOARD)
+
     result = {
         "GPIO.RPI_INFO": GPIO.RPI_INFO,
         "GPIO.VERSION": GPIO.VERSION,

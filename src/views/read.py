@@ -13,7 +13,9 @@ def read(environ, response, parameter = None):
     ]
     
     try:
-    
+
+        GPIO.setmode(GPIO.BOARD)
+
         pin = int(parameter[0])
         
         mode = GPIO.PUD_UP
