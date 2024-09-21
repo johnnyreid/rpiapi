@@ -6,37 +6,37 @@ from RPi import GPIO
 
 
 def initialise_outputs(environ, response, parameter = None):
-	
-	status = "200 OK"
-	
-	header = [
-		("Content-Type", "application/json"),
-		("Cache-Control", "no-store, no-cache, must-revalidate"),
-		("Expires", "0")
-	]
-	
-	try:
-	
-		# pins = array(parameter[0])
+    
+    status = "200 OK"
+    
+    header = [
+        ("Content-Type", "application/json"),
+        ("Cache-Control", "no-store, no-cache, must-revalidate"),
+        ("Expires", "0")
+    ]
+    
+    try:
+    
+        # pins = array(parameter[0])
 
-		pins = [11, 12, 13, 15, 16, 18,
-				22, 7, 29, 31]
+pins = [11, 13, 15, 16, 12, 18,
+        22, 7, 29, 31]
 
-		# set up all pins to be outputs
-		GPIO.setup(pins, GPIO.OUT)
+        # set up all pins to be outputs
+        GPIO.setup(pins, GPIO.OUT)
 
-		# turn all pins off
-		GPIO.output(pins, 0)
+        # turn all pins off
+        GPIO.output(pins, 0)
 
-		GPIO.cleanup()
-		result = True
-	
-	except Exception as e:
+        GPIO.cleanup()
+        result = True
+    
+    except Exception as e:
 
-		status = "400 Bad Request"
+        status = "400 Bad Request"
 
-		result = str(e)
+        result = str(e)
 
-	response(status, header)
+    response(status, header)
 
-	return [json.dumps(result).encode()]
+    return [json.dumps(result).encode()]

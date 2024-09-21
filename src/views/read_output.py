@@ -3,30 +3,32 @@ from RPi import GPIO
 
 
 def read_output(environ, response, parameter = None):
-	
-	status = "200 OK"
-	
-	header = [
-		("Content-Type", "application/json"),
-		("Cache-Control", "no-store, no-cache, must-revalidate"),
-		("Expires", "0")
-	]
-	
-	try:
-		pin = int(parameter[0])
+    
+    status = "200 OK"
+    
+    header = [
+        ("Content-Type", "application/json"),
+        ("Cache-Control", "no-store, no-cache, must-revalidate"),
+        ("Expires", "0")
+    ]
+    
+    try:
+        pin = int(parameter[0])
 
-		GPIO.setup(pin, GPIO.OUT)
+        GPIO.setup(pin, GPIO.OUT)
 
-		result = GPIO.input(pin)
+        result = GPIO.input(pin)
 
-		GPIO.cleanup()
 
-	except Exception as e:
 
-		status = "400 Bad Request"
+    except Exception as e:
 
-		result = str(e)
+        status = "400 Bad Request"
 
-	response(status, header)
+        result = str(e)
 
-	return [json.dumps(result).encode()]
+    response(status, header)
+
+    GPIO.cleanup()
+
+    return [json.dumps(result).encode()]
