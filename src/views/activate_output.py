@@ -22,8 +22,6 @@ def activate_output(environ, response, parameter = None):
         
         result = GPIO.input(pin)
 
-        GPIO.cleanup()
-
     except Exception as e:
 
         status = "400 Bad Request"

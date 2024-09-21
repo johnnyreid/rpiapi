@@ -21,16 +21,12 @@ def deactivate_output(environ, response, parameter = None):
         GPIO.output(pin, 0)
         
         result = GPIO.input(pin)
-
-        GPIO.cleanup()
     
     except Exception as e:
 
         status = "400 Bad Request"
 
         result = str(e)
-
-    response(status, header)
 
     GPIO.cleanup()
 
