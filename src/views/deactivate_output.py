@@ -30,6 +30,8 @@ def deactivate_output(environ, response, parameter = None):
 
         result = str(e)
 
+    response(status, header)
+
     GPIO.cleanup()
 
     return [json.dumps(result).encode()]
