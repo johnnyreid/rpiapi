@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "Password Protected Area"
-AuthUserFile /var/www/rpiapi/.htpasswd
+AuthUserFile /var/www/rpiapi/src/.htpasswd
 Require valid-user

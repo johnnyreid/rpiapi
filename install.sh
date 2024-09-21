@@ -3,13 +3,10 @@
 [[ $(id -u) = "0" ]] || { echo "Please run the script as root user. sudo $0"; exit; }
 
 # Install dependencies
-apt-get -y install python3 python3-rpi.gpio apache2 apache2-utils libapache2-mod-wsgi-py3
+apt-get -y install python3 python3-pigpio apache2 apache2-utils libapache2-mod-wsgi-py3
 
 # Enable module wsgi
 a2enmod wsgi
-
-# Copy api folder to /var/www/ (don't put it under html folder, or the source code might be exposed)
-cp -r rpiapi/ /var/www/
 
 # Copy configuration file to apache2 directory conf-enabled
 cp rpiapi/rpiapi.conf /etc/apache2/conf-enabled/
@@ -26,7 +23,7 @@ clear
 echo -e "Enter the new password for the user admin \n\n\n"
 
 # Change the password for the admin user (default: admin)
-htpasswd /var/www/rpiapi/.htpasswd admin
+htpasswd /var/www/rpiapi/src/.htpasswd admin
 
 ip=$(hostname -I | cut -d " " -f1) 
 

@@ -91,10 +91,10 @@ The RPiAPI uses basic HTTP authorization setted with a .htaccess and a .htpasswd
 
 ### Create an user
 ```
-htpasswd -c /var/www/rpiapi/.htpasswd username
+htpasswd -c /var/www/rpiapi/src/.htpasswd username
 ```
 
 ### Change the password of an existing user
 ```
-htpasswd /var/www/rpiapi/.htpasswd admin
+htpasswd /var/www/rpiapi/src/.htpasswd admin
 ```
