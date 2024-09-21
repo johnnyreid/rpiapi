@@ -28,6 +28,4 @@ def index(environ, response):
     
     response(status, header)
 
-    GPIO.cleanup()
-
     return [json.dumps(result).encode()]
